@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Planner for U - 회원가입</title>
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
+    <script th:src="@{/js/signin.js}" defer="defer"></script> <!-- JS 파일 연결 -->
+</head>
+<body>
+    <div class="signup">
+        <div class="mainlogo">
+            <img alt="로고 이미지" src="/image/임시로고.png">
+        </div>
+        <form class="signup-form" action="/api/signin" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <div class="email-check-group">
+                    <input type="email" id="email" name="email" required placeholder="이메일을 입력하세요" oninput="checkSignupButtonState()">
+                    <button type="button" class="email-check-button" onclick="checkEmail()">중복검사</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required placeholder="이름을 입력하세요" oninput="checkSignupButtonState()">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required placeholder="비밀번호를 입력하세요" oninput="checkSignupButtonState()">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">비밀번호 확인</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required placeholder="비밀번호를 다시 입력하세요" oninput="checkSignupButtonState()">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="signup-button" id="signup-button" onclick="formsignin()" disabled>회원가입</button>
+                <button type="button" class="cancel-button" onclick="window.location.href='/app/login'">취소</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

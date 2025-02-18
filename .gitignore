@@ -1,0 +1,32 @@
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# Spring Boot 관련
+target/
+bin/
+out/
+build/
+
+# 환경 설정 및 민감한 정보
+*.env
+*.properties
+*.yml
+*.yaml
+!/src/main/resources/application-example.properties # 예제 파일 유지
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# IDE 관련
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Git 관련
+*.log
+*.cache
